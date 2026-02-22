@@ -134,8 +134,8 @@ body {
 
 /* Experience */
 .experience-item {
-    margin-bottom: 44px;
-    padding-bottom: 44px;
+    margin-bottom: 40px;
+    padding-bottom: 40px;
     border-bottom: 1px solid #f0f0f0;
 }
 
@@ -145,33 +145,130 @@ body {
     margin-bottom: 0;
 }
 
-.experience-item h3 {
-    font-size: 18px;
+.exp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 16px;
+    gap: 16px;
+}
+
+.exp-header h3 {
+    font-size: 17px;
     font-weight: 600;
     color: #1a1a1a;
-    margin-bottom: 4px;
+    margin-bottom: 3px;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     letter-spacing: -0.01em;
 }
 
-.experience-item .company {
+.exp-header .company {
+    font-size: 14px;
+    color: #888;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.exp-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    flex-shrink: 0;
+}
+
+.exp-meta .duration {
+    font-size: 13px;
+    color: #aaa;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    white-space: nowrap;
+}
+
+.exp-meta .tenure {
+    font-size: 12px;
+    color: #ccc;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    margin-top: 2px;
+}
+
+.exp-points {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.exp-points li {
+    font-size: 14px;
+    color: #555;
+    padding: 8px 0 8px 14px;
+    border-bottom: 1px solid #f5f5f5;
+    line-height: 1.65;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    position: relative;
+}
+
+.exp-points li:first-child {
+    border-top: 1px solid #f5f5f5;
+}
+
+.exp-points li::before {
+    content: '–';
+    position: absolute;
+    left: 0;
+    color: #ddd;
+}
+
+.exp-tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    color: #aaa;
+    background: #f5f5f5;
+    padding: 1px 6px;
+    border-radius: 3px;
+    margin-right: 6px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    vertical-align: middle;
+    letter-spacing: 0.02em;
+}
+
+/* Recognition */
+.recognition-row {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.recognition-item {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    padding: 12px 0;
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.recognition-item:first-child {
+    border-top: 1px solid #f5f5f5;
+}
+
+.rec-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.rec-sub {
+    font-size: 13px;
+    color: #aaa;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* Beyond Work */
+.beyond-text {
     font-size: 15px;
     color: #777;
-    margin-bottom: 2px;
+    line-height: 1.7;
+    max-width: 540px;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-}
-
-.experience-item .duration {
-    font-size: 13px;
-    color: #bbb;
-    margin-bottom: 14px;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-}
-
-.experience-item p {
-    font-size: 16px;
-    color: #555;
-    line-height: 1.75;
 }
 
 /* Projects */
@@ -258,6 +355,21 @@ body {
     color: #333;
 }
 
+.proof-link {
+    color: #555;
+    text-decoration: none;
+    font-size: 13px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 1px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    transition: color 0.2s, border-color 0.2s;
+}
+
+.proof-link:hover {
+    color: #1a1a1a;
+    border-color: #888;
+}
+
 .tech-stack {
     display: flex;
     flex-wrap: wrap;
@@ -336,6 +448,22 @@ body {
 
     .page-header h1 {
         font-size: 28px;
+    }
+
+    .exp-header {
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .exp-meta {
+        align-items: flex-start;
+        flex-direction: row;
+        gap: 8px;
+    }
+
+    .exp-meta .tenure::before {
+        content: '·';
+        margin-right: 8px;
     }
 
     .footer .links {
