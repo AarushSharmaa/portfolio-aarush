@@ -5,11 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects - Aarush Sharma</title>
     <link rel="stylesheet" href="styles.css">
-    <meta name="description" content="Projects by Aarush Sharma — enterprise GenAI deployments, AI products, and applied research.">
+    <meta name="description" content="Projects by Aarush Sharma - enterprise GenAI deployments, AI products, and applied research.">
 </head>
 <body>
     <div class="container">
-        <!-- Navigation -->
         <nav class="nav">
             <a href="index.html" class="nav-brand">Aarush Sharma</a>
             <ul>
@@ -19,25 +18,23 @@
             </ul>
         </nav>
 
-        <!-- Projects Header -->
         <section class="page-header">
             <h1>Projects</h1>
-            <p>Real deployments across enterprise clients, AI products, and a wide range of POCs — from rapid experiments to production systems.</p>
+            <p>Enterprise deployments, AI products, and a wide range of POCs - across the full arc from rapid experiments to production systems.</p>
         </section>
 
-        <!-- Enterprise Deployments -->
         <section class="section">
             <h2>Enterprise Deployments</h2>
-            <p class="section-intro">Production systems built for real enterprise clients — involving stakeholder alignment, technical ownership, and delivery under pressure.</p>
+            <p class="section-intro">Production systems built for real enterprise clients, involving technical ownership, stakeholder alignment, and delivery under pressure.</p>
 
             <div class="project">
                 <h3>Multimodal GenAI Compliance System</h3>
                 <div class="project-meta">Katonic AI · Largest Governmental Real Estate Entity in Saudi Arabia · 2025</div>
                 <ul class="project-points">
-                    <li><strong>Problem:</strong> Manual review of architectural design images against internal policy standards — slow, inconsistent, and hard to scale.</li>
-                    <li><strong>Built:</strong> A multimodal GenAI pipeline where users upload design images and vision agents automatically check them against policy rules, generating a structured report across three categories — Compliant, Non-Compliant (with reasoning), and Needs Review.</li>
-                    <li><strong>Technical highlight:</strong> Integrated MinerU, a non-OpenAI-compatible model, by building a custom FastAPI wrapper deployed on the Katonic platform. Full agent architecture built on Katonic AI using Groq and custom-deployed models.</li>
-                    <li><strong>My role:</strong> End-to-end ownership — architecture, development, customer stakeholder alignment, and internal product coordination.</li>
+                    <li><strong>Problem:</strong> Architectural design images were reviewed manually against internal policy standards - slow, inconsistent, and difficult to scale across a large regulatory body.</li>
+                    <li><strong>Built:</strong> A multimodal GenAI pipeline where users upload design images and vision agents automatically check them against policy rules. Output is a structured compliance report across three categories: Compliant, Non-Compliant (with detailed reasoning), and Needs Review.</li>
+                    <li><strong>Technical highlight:</strong> Integrated MinerU, a non-OpenAI-compatible model, by building a custom FastAPI wrapper and deploying it on the Katonic platform. Full agent architecture built using Groq and custom-deployed models.</li>
+                    <li><strong>My role:</strong> End-to-end ownership across architecture, development, customer stakeholder management, and internal product alignment.</li>
                 </ul>
                 <div class="tech-stack">
                     <span class="tech">Multimodal AI</span>
@@ -50,19 +47,38 @@
             </div>
 
             <div class="project">
-                <h3>GenAI-Powered QA Automation & Conversational AI</h3>
-                <div class="project-meta">Incedo Inc. · US Wealth Management Firm · 2024</div>
+                <h3>GenAI-Enabled QA Automation Engine</h3>
+                <div class="project-meta">Incedo Inc. · US Wealth Management Firm · 2023-2024 · <a href="https://www.incedoinc.com/case-studies/gen-ai-enabled-qa-testing-solution-for-a-leading-us-wealth-management-firm/" target="_blank" class="proof-link">View Case Study</a></div>
                 <ul class="project-points">
-                    <li><strong>Problem:</strong> Manual QA processes and slow query resolution — financial document searches took days.</li>
-                    <li><strong>Built:</strong> RAG-based QA automation and conversational AI system, deployed on a private LLM on AWS EC2 to meet strict data security requirements.</li>
-                    <li><strong>Outcome:</strong> Resolution time reduced from days to minutes. Over 95% response accuracy achieved in production.</li>
+                    <li><strong>Problem:</strong> A 60-member QA team spent significant time and cost on testing despite heavy automation investment. The end-to-end QA lifecycle was still largely manual.</li>
+                    <li><strong>Built:</strong> A GenAI engine that automated the full QA lifecycle - from user story to test case generation, and from test cases to executable test scripts. Removed the most repetitive steps from the process entirely.</li>
+                    <li><strong>Outcome:</strong> 33% productivity gains across end-to-end QA test cycle execution, freeing the team for higher-value development work.</li>
+                </ul>
+                <div class="tech-stack">
+                    <span class="tech">LLMs</span>
+                    <span class="tech">Prompt Engineering</span>
+                    <span class="tech">Python</span>
+                    <span class="tech">RAG</span>
+                    <span class="tech">Test Automation</span>
+                </div>
+            </div>
+
+            <div class="project">
+                <h3>Private LLM-Powered Customer Support Chatbot</h3>
+                <div class="project-meta">Incedo Inc. · German Hardware Networking Client · 2023-2024</div>
+                <ul class="project-points">
+                    <li><strong>Problem:</strong> Customer support queries required searching across large volumes of technical documentation, with resolution times running into days.</li>
+                    <li><strong>Built:</strong> A conversational AI system using Advanced RAG, with open-source LLMs identified and deployed privately on AWS EC2 to meet data security requirements.</li>
+                    <li><strong>Outcome:</strong> Query resolution time reduced from days to minutes. Response accuracy exceeded 95% in production.</li>
+                    <li><strong>Also contributed:</strong> NLP pipelines for named-entity extraction, Flask REST APIs for full-stack integration, and database design across the solution.</li>
                 </ul>
                 <div class="tech-stack">
                     <span class="tech">RAG</span>
                     <span class="tech">Private LLM</span>
                     <span class="tech">AWS EC2</span>
-                    <span class="tech">Python</span>
+                    <span class="tech">Flask</span>
                     <span class="tech">NLP</span>
+                    <span class="tech">Named Entity Extraction</span>
                 </div>
             </div>
 
@@ -70,33 +86,32 @@
                 <h3>Text-to-SQL for Leadership Analytics</h3>
                 <div class="project-meta">Curve AI · Leading Indian Watch Manufacturer · 2024</div>
                 <ul class="project-points">
-                    <li><strong>Problem:</strong> Leadership depended on analysts to generate reports — slow, bottlenecked, and not self-serve.</li>
-                    <li><strong>Built:</strong> A Text-to-SQL system using a RAG pipeline where leadership asks questions in natural language and gets SQL-backed results with automated dashboard output.</li>
-                    <li><strong>Key components:</strong> Schema Intelligence Agent to handle complex DB structures + Dashboard Generator Agent for visual report output.</li>
+                    <li><strong>Problem:</strong> Leadership depended on analysts to pull reports from complex databases, creating delays and a constant bottleneck on the data team.</li>
+                    <li><strong>Built:</strong> A Text-to-SQL system using a RAG pipeline where users ask in natural language and get SQL-backed results with automated dashboard output. A Schema Intelligence Agent maps natural language intent to the right tables, columns, and relationships in the database. A Dashboard Generator Agent then converts query results into visual reports for the leadership team.</li>
+                    <li><strong>Outcome:</strong> Reduced dashboard access time and removed analyst dependency for routine reporting.</li>
                 </ul>
                 <div class="tech-stack">
                     <span class="tech">Text-to-SQL</span>
                     <span class="tech">RAG</span>
                     <span class="tech">LLMs</span>
-                    <span class="tech">Multi-Agent</span>
+                    <span class="tech">Schema Intelligence Agent</span>
                     <span class="tech">SQL</span>
                     <span class="tech">Dashboard Generation</span>
                 </div>
             </div>
         </section>
 
-        <!-- Products & POCs -->
         <section class="section">
             <h2>Products & POCs</h2>
-            <p class="section-intro">A constant stream of experimentation — building products and validating ideas across domains. Some went to production, all sharpened the intuition for what works.</p>
+            <p class="section-intro">I have worked on a wide variety of POCs across clients and domains - validating ideas quickly, learning what works, and occasionally taking things to production. Some of the major ones below.</p>
 
             <div class="project">
                 <h3>AI-Driven Mental Health Platform</h3>
-                <div class="project-meta">2025 · Piloted at a hospital in Gurgaon</div>
+                <div class="project-meta">Curve AI · 2025 · Used across schools in North India and a major hospital in Gurugram · <a href="https://www.bharatayush.ai/" target="_blank" class="proof-link">Visit Product</a></div>
                 <ul class="project-points">
-                    <li><strong>Problem:</strong> Therapist bandwidth is limited — consistent, structured mental health support is hard to scale in clinical settings.</li>
-                    <li><strong>Built:</strong> CBT-based platform providing AI-driven therapy conversations and patient assessments. Piloted with real patients at a hospital in Gurgaon.</li>
-                    <li><strong>My role:</strong> Owned frontend development in React JS, collaborating directly with clinical practitioners to align the experience with therapeutic frameworks.</li>
+                    <li><strong>Problem:</strong> Access to structured, consistent mental health support is limited - especially in schools and clinical settings where professional bandwidth is a real constraint.</li>
+                    <li><strong>Built:</strong> A CBT-based platform providing AI-driven therapy conversations and patient assessments. Deployed and used across schools in North India and piloted at a major hospital in Gurugram.</li>
+                    <li><strong>My role:</strong> Led product and UI development using React JS, working directly with clinical practitioners to align the experience with therapeutic frameworks.</li>
                 </ul>
                 <div class="tech-stack">
                     <span class="tech">React</span>
@@ -110,9 +125,9 @@
                 <h3>D2C E-Commerce Intelligence Platform</h3>
                 <div class="project-meta">Curve AI · 2025</div>
                 <ul class="project-points">
-                    <li><strong>Problem:</strong> D2C brands couldn't track competitor pricing at scale — manual monitoring was slow and incomplete.</li>
-                    <li><strong>Built:</strong> Scalable backend for price tracking, historical analysis, and competitive intelligence across multiple e-commerce platforms.</li>
-                    <li><strong>Outcome:</strong> Multi-agent scraping framework reduced data processing time by over 60%, handling dynamic content, rate limiting, and data validation automatically.</li>
+                    <li><strong>Problem:</strong> D2C brands had no reliable way to track competitor pricing and market trends at scale without heavy manual effort.</li>
+                    <li><strong>Built:</strong> A scalable backend for price tracking, historical analysis, and trend prediction across multiple e-commerce platforms.</li>
+                    <li><strong>Core component:</strong> A multi-agent web scraper for large-scale data collection, handling dynamic content, rate limiting, and data validation automatically. Reduced data processing time by over 60%.</li>
                 </ul>
                 <div class="tech-stack">
                     <span class="tech">Python</span>
@@ -124,19 +139,18 @@
             </div>
 
             <div class="project">
-                <h3>POC Lab — Applied AI Experiments</h3>
-                <div class="project-meta">Ongoing · Various Clients & Domains</div>
-                <p class="poc-intro">A wide variety of POCs built across clients and industries — the ones below represent the range of problems explored:</p>
+                <h3>POC Lab</h3>
+                <div class="project-meta">Ongoing · Various Clients and Domains</div>
+                <p class="poc-intro">A selection from a wider body of experimentation - spanning telecom, enterprise software modernization, and multi-agent AI systems.</p>
                 <ul class="project-points">
-                    <li><strong>Log Lifecycle Automation (Telecom):</strong> Automated full log management lifecycle for customer support engineers at a major telecom client — targeting resolution time reduction from days to under 2 hours.</li>
-                    <li><strong>Java → Microservices Migration (CrewAI):</strong> Agentic CrewAI solution to analyze legacy Java monolith codebases and generate microservice architecture recommendations.</li>
-                    <li><strong>Multi-Agent E-Commerce Scraper:</strong> Adaptive scraping framework with domain-specific agents, handling a wide variety of site structures reliably at scale.</li>
-                    <li><strong>RAG Pipelines with Multi-Agent Orchestration:</strong> Multiple RAG implementations across domains — with orchestration layers managing retrieval, reranking, and response synthesis across specialized agents.</li>
+                    <li><strong>Log Lifecycle Automation (Telecom):</strong> Automated the full lifecycle of log management for customer support engineers at a major telecom client. Goal was to reduce resolution time from days to under 2 hours by intelligently triaging and routing log events.</li>
+                    <li><strong>Java to Microservices Migration (CrewAI):</strong> Agentic solution using CrewAI to analyze legacy Java monolith codebases and generate microservice architecture recommendations, reducing manual effort in large-scale modernization work.</li>
+                    <li><strong>Multi-Agent E-Commerce Scraper:</strong> Adaptive scraping framework with domain-specific agents capable of handling a wide variety of site structures reliably at scale.</li>
+                    <li><strong>RAG Pipelines with Multi-Agent Orchestration:</strong> Multiple RAG implementations across domains, with orchestration layers managing retrieval, reranking, and response synthesis across specialized agents.</li>
                 </ul>
             </div>
         </section>
 
-        <!-- Footer -->
         <footer class="footer" id="contact">
             <p>Let's build something together.</p>
             <div class="links">
