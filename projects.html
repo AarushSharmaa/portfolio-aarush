@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Aarush Sharma</title>
+    <link rel="stylesheet" href="styles.css">
+    <meta name="description" content="Projects by Aarush Sharma — enterprise GenAI deployments, AI products, and applied research.">
+</head>
+<body>
+    <div class="container">
+        <!-- Navigation -->
+        <nav class="nav">
+            <a href="index.html" class="nav-brand">Aarush Sharma</a>
+            <ul>
+                <li><a href="index.html">About</a></li>
+                <li><a href="projects.html" class="active">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <!-- Projects Header -->
+        <section class="page-header">
+            <h1>Projects</h1>
+            <p>Real deployments across enterprise clients, AI products, and a wide range of POCs — from rapid experiments to production systems.</p>
+        </section>
+
+        <!-- Enterprise Deployments -->
+        <section class="section">
+            <h2>Enterprise Deployments</h2>
+            <p class="section-intro">Production systems built for real enterprise clients — involving stakeholder alignment, technical ownership, and delivery under pressure.</p>
+
+            <div class="project">
+                <h3>Multimodal GenAI Compliance System</h3>
+                <div class="project-meta">Katonic AI · Largest Governmental Real Estate Entity in Saudi Arabia · 2025</div>
+                <ul class="project-points">
+                    <li><strong>Problem:</strong> Manual review of architectural design images against internal policy standards — slow, inconsistent, and hard to scale.</li>
+                    <li><strong>Built:</strong> A multimodal GenAI pipeline where users upload design images and vision agents automatically check them against policy rules, generating a structured report across three categories — Compliant, Non-Compliant (with reasoning), and Needs Review.</li>
+                    <li><strong>Technical highlight:</strong> Integrated MinerU, a non-OpenAI-compatible model, by building a custom FastAPI wrapper deployed on the Katonic platform. Full agent architecture built on Katonic AI using Groq and custom-deployed models.</li>
+                    <li><strong>My role:</strong> End-to-end ownership — architecture, development, customer stakeholder alignment, and internal product coordination.</li>
+                </ul>
+                <div class="tech-stack">
+                    <span class="tech">Multimodal AI</span>
+                    <span class="tech">Vision Agents</span>
+                    <span class="tech">FastAPI</span>
+                    <span class="tech">Groq</span>
+                    <span class="tech">Custom Model Deployment</span>
+                    <span class="tech">Katonic Platform</span>
+                </div>
+            </div>
+
+            <div class="project">
+                <h3>GenAI-Powered QA Automation & Conversational AI</h3>
+                <div class="project-meta">Incedo Inc. · US Wealth Management Firm · 2024</div>
+                <ul class="project-points">
+                    <li><strong>Problem:</strong> Manual QA processes and slow query resolution — financial document searches took days.</li>
+                    <li><strong>Built:</strong> RAG-based QA automation and conversational AI system, deployed on a private LLM on AWS EC2 to meet strict data security requirements.</li>
+                    <li><strong>Outcome:</strong> Resolution time reduced from days to minutes. Over 95% response accuracy achieved in production.</li>
+                </ul>
+                <div class="tech-stack">
+                    <span class="tech">RAG</span>
+                    <span class="tech">Private LLM</span>
+                    <span class="tech">AWS EC2</span>
+                    <span class="tech">Python</span>
+                    <span class="tech">NLP</span>
+                </div>
+            </div>
+
+            <div class="project">
+                <h3>Text-to-SQL for Leadership Analytics</h3>
+                <div class="project-meta">Curve AI · Leading Indian Watch Manufacturer · 2024</div>
+                <ul class="project-points">
+                    <li><strong>Problem:</strong> Leadership depended on analysts to generate reports — slow, bottlenecked, and not self-serve.</li>
+                    <li><strong>Built:</strong> A Text-to-SQL system using a RAG pipeline where leadership asks questions in natural language and gets SQL-backed results with automated dashboard output.</li>
+                    <li><strong>Key components:</strong> Schema Intelligence Agent to handle complex DB structures + Dashboard Generator Agent for visual report output.</li>
+                </ul>
+                <div class="tech-stack">
+                    <span class="tech">Text-to-SQL</span>
+                    <span class="tech">RAG</span>
+                    <span class="tech">LLMs</span>
+                    <span class="tech">Multi-Agent</span>
+                    <span class="tech">SQL</span>
+                    <span class="tech">Dashboard Generation</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Products & POCs -->
+        <section class="section">
+            <h2>Products & POCs</h2>
+            <p class="section-intro">A constant stream of experimentation — building products and validating ideas across domains. Some went to production, all sharpened the intuition for what works.</p>
+
+            <div class="project">
+                <h3>AI-Driven Mental Health Platform</h3>
+                <div class="project-meta">2025 · Piloted at a hospital in Gurgaon</div>
+                <ul class="project-points">
+                    <li><strong>Problem:</strong> Therapist bandwidth is limited — consistent, structured mental health support is hard to scale in clinical settings.</li>
+                    <li><strong>Built:</strong> CBT-based platform providing AI-driven therapy conversations and patient assessments. Piloted with real patients at a hospital in Gurgaon.</li>
+                    <li><strong>My role:</strong> Owned frontend development in React JS, collaborating directly with clinical practitioners to align the experience with therapeutic frameworks.</li>
+                </ul>
+                <div class="tech-stack">
+                    <span class="tech">React</span>
+                    <span class="tech">Node.js</span>
+                    <span class="tech">OpenAI API</span>
+                    <span class="tech">CBT Framework</span>
+                </div>
+            </div>
+
+            <div class="project">
+                <h3>D2C E-Commerce Intelligence Platform</h3>
+                <div class="project-meta">Curve AI · 2025</div>
+                <ul class="project-points">
+                    <li><strong>Problem:</strong> D2C brands couldn't track competitor pricing at scale — manual monitoring was slow and incomplete.</li>
+                    <li><strong>Built:</strong> Scalable backend for price tracking, historical analysis, and competitive intelligence across multiple e-commerce platforms.</li>
+                    <li><strong>Outcome:</strong> Multi-agent scraping framework reduced data processing time by over 60%, handling dynamic content, rate limiting, and data validation automatically.</li>
+                </ul>
+                <div class="tech-stack">
+                    <span class="tech">Python</span>
+                    <span class="tech">Multi-Agent Systems</span>
+                    <span class="tech">FastAPI</span>
+                    <span class="tech">PostgreSQL</span>
+                    <span class="tech">Web Scraping</span>
+                </div>
+            </div>
+
+            <div class="project">
+                <h3>POC Lab — Applied AI Experiments</h3>
+                <div class="project-meta">Ongoing · Various Clients & Domains</div>
+                <p class="poc-intro">A wide variety of POCs built across clients and industries — the ones below represent the range of problems explored:</p>
+                <ul class="project-points">
+                    <li><strong>Log Lifecycle Automation (Telecom):</strong> Automated full log management lifecycle for customer support engineers at a major telecom client — targeting resolution time reduction from days to under 2 hours.</li>
+                    <li><strong>Java → Microservices Migration (CrewAI):</strong> Agentic CrewAI solution to analyze legacy Java monolith codebases and generate microservice architecture recommendations.</li>
+                    <li><strong>Multi-Agent E-Commerce Scraper:</strong> Adaptive scraping framework with domain-specific agents, handling a wide variety of site structures reliably at scale.</li>
+                    <li><strong>RAG Pipelines with Multi-Agent Orchestration:</strong> Multiple RAG implementations across domains — with orchestration layers managing retrieval, reranking, and response synthesis across specialized agents.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer" id="contact">
+            <p>Let's build something together.</p>
+            <div class="links">
+                <a href="mailto:aarush.sharma6@gmail.com">aarush.sharma6@gmail.com</a>
+                <a href="https://linkedin.com/in/aarushsharma11" target="_blank">LinkedIn</a>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
