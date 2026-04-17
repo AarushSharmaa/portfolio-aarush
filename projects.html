@@ -5,156 +5,467 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects - Aarush Sharma</title>
     <link rel="stylesheet" href="styles.css">
-    <meta name="description" content="Projects by Aarush Sharma - enterprise GenAI deployments, AI products, and applied research.">
-    <meta property="og:title" content="Projects - Aarush Sharma">
-    <meta property="og:description" content="Enterprise GenAI deployments, AI products, and POCs. Production systems built for real clients across financial services and government.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://aarushsharmaa.github.io/aarush-sharma/projects.html">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Projects - Aarush Sharma">
-    <meta name="twitter:description" content="Enterprise GenAI deployments, AI products, and POCs. Production systems built for real clients across financial services and government.">
+    <style>
+        .open-intro {
+            font-size: 14px;
+            color: #888;
+            line-height: 1.85;
+            max-width: 500px;
+            margin-top: -14px;
+            margin-bottom: 36px;
+        }
+
+        /* ── Terminal ── */
+        .terminal {
+            background: #0a0a0a;
+            border-radius: 10px;
+            overflow: hidden;
+            font-family: 'SF Mono', 'Fira Code', 'Consolas', 'Menlo', monospace;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+        }
+
+        .term-titlebar {
+            display: flex;
+            align-items: center;
+            padding: 12px 16px;
+            background: #161616;
+            gap: 7px;
+        }
+
+        .term-dot { width: 11px; height: 11px; border-radius: 50%; }
+        .term-dot.r { background: #ff5f56; }
+        .term-dot.y { background: #ffbd2e; }
+        .term-dot.g { background: #27c93f; }
+
+        .term-title {
+            font-size: 11px;
+            color: #3a3a3a;
+            margin-left: 10px;
+            letter-spacing: 0.03em;
+        }
+
+        .term-body {
+            padding: 20px 22px 24px;
+        }
+
+        /* ── Prompt lines ── */
+        .prompt {
+            font-size: 12px;
+            line-height: 1.8;
+            margin-bottom: 4px;
+        }
+
+        .prompt .path { color: #4caf7d; }
+        .prompt .cmd  { color: #d4d4d4; }
+
+        /* ── ls output (navigation) ── */
+        .ls-output {
+            margin-bottom: 20px;
+        }
+
+        .ls-row {
+            display: flex;
+            align-items: center;
+            font-size: 12px;
+            padding: 5px 8px;
+            margin: 0 -8px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.15s;
+            gap: 0;
+        }
+
+        .ls-row:hover { background: #141414; }
+
+        .ls-row + .ls-row {
+            border-top: 1px solid #111;
+        }
+
+        .ls-row.selected {
+            background: #0e1a0e;
+            border-top-color: transparent;
+            border-left: 2px solid #4caf7d;
+            padding-left: 6px;
+        }
+
+        .ls-row.selected + .ls-row {
+            border-top-color: transparent;
+        }
+
+        .ls-perms {
+            color: #333;
+            width: 90px;
+            flex-shrink: 0;
+        }
+
+        .ls-name {
+            color: #6fb8ff;
+            flex: 1;
+            min-width: 0;
+        }
+
+        .ls-row.selected .ls-name {
+            color: #8ecbff;
+        }
+
+        .ls-status {
+            font-size: 10px;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+
+        .ls-status.pypi   { color: #4caf7d; }
+        .ls-status.active { color: #555; }
+        .ls-status.proto  { color: #e8a44a; }
+        .ls-status.fun    { color: #e86b6b; }
+
+        /* ── Divider ── */
+        .term-hr {
+            border: none;
+            border-top: 1px solid #1a1a1a;
+            margin: 16px 0;
+        }
+
+        /* ── Project detail area ── */
+        .project-detail {
+            display: none;
+        }
+
+        .project-detail.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(6px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        .detail-prompt {
+            font-size: 12px;
+            margin-bottom: 16px;
+        }
+
+        .detail-prompt .path { color: #4caf7d; }
+        .detail-prompt .cmd  { color: #d4d4d4; }
+
+        .detail-prompt .typing-cursor {
+            display: inline-block;
+            width: 7px;
+            height: 14px;
+            background: #d4d4d4;
+            margin-left: 2px;
+            vertical-align: text-bottom;
+            animation: blink 1.1s step-end infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50%      { opacity: 0; }
+        }
+
+        /* ── README output styling ── */
+        .readme-title {
+            font-size: 15px;
+            font-weight: 600;
+            color: #e8e8e8;
+            margin-bottom: 4px;
+        }
+
+        .readme-thesis {
+            font-size: 12px;
+            color: #666;
+            font-style: italic;
+            line-height: 1.8;
+            margin-bottom: 16px;
+            padding-left: 12px;
+            border-left: 2px solid #222;
+        }
+
+        .readme-body {
+            font-size: 12px;
+            color: #888;
+            line-height: 2;
+            margin-bottom: 16px;
+        }
+
+        .readme-body strong {
+            color: #bbb;
+            font-weight: 600;
+        }
+
+        /* Install block */
+        .install-block {
+            display: inline-block;
+            background: #111;
+            border: 1px solid #1e1e1e;
+            border-radius: 5px;
+            padding: 7px 14px;
+            font-size: 12px;
+            color: #4caf7d;
+            margin-bottom: 16px;
+        }
+
+        .install-block .dollar { color: #444; margin-right: 8px; }
+
+        /* Proof / metrics */
+        .readme-proof {
+            font-size: 11px;
+            color: #444;
+            line-height: 2;
+            margin-bottom: 16px;
+        }
+
+        .readme-proof .metric {
+            color: #555;
+        }
+
+        /* Tags row */
+        .readme-tags {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+            margin-bottom: 14px;
+        }
+
+        .rtag {
+            font-size: 9px;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            padding: 2px 7px;
+            border-radius: 2px;
+        }
+
+        .rtag.pypi  { background: #0e2318; color: #4caf7d; }
+        .rtag.eval  { background: #111d28; color: #6fb8ff; }
+        .rtag.oss   { background: #1a1228; color: #b48eff; }
+        .rtag.agent { background: #1a1510; color: #e8a44a; }
+        .rtag.multi { background: #111d28; color: #6fb8ff; }
+        .rtag.fun   { background: #261616; color: #e86b6b; }
+
+        /* GitHub link */
+        .readme-gh {
+            font-size: 12px;
+            color: #6fb8ff;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 5px 10px;
+            border: 1px solid #1a2a3a;
+            border-radius: 4px;
+            background: #0a1520;
+            transition: background 0.2s, border-color 0.2s, color 0.2s;
+        }
+
+        .readme-gh:hover {
+            background: #0d1e30;
+            border-color: #2a4060;
+            color: #8ecbff;
+        }
+        .readme-gh svg { width: 13px; height: 13px; flex-shrink: 0; }
+
+        /* ── Hint text ── */
+        .term-hint {
+            font-size: 10px;
+            color: #2a2a2a;
+            text-align: center;
+            padding-top: 12px;
+            letter-spacing: 0.03em;
+        }
+
+        /* ── Mobile ── */
+        @media (max-width: 640px) {
+            .term-body { padding: 16px 14px 20px; }
+            .ls-perms { display: none; }
+            .ls-row { padding: 6px 4px; margin: 0 -4px; }
+            .readme-body { line-height: 1.9; }
+        }
+    </style>
 </head>
 <body>
     <div class="container">
+
         <nav class="nav">
             <a href="index.html" class="nav-brand">Aarush Sharma</a>
             <ul>
                 <li><a href="index.html">About</a></li>
+                <li><a href="work.html">Work</a></li>
                 <li><a href="projects.html" class="active">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
 
-        <section class="page-header">
-            <h1>Projects</h1>
-            <p>Enterprise deployments, AI products, and a wide range of POCs. From rapid experiments to production systems shipped under real pressure.</p>
-        </section>
-
         <section class="section">
-            <h2>Enterprise Deployments</h2>
-            <p class="section-intro">Production systems built for real enterprise clients. Technical ownership, stakeholder alignment, and delivery under pressure.</p>
+            <h2>Built in the Open</h2>
+            <p class="open-intro">Side projects born from real frustrations. I follow eval-driven development: nothing ships until I can measure it works.</p>
 
-            <div class="project">
-                <h3>Multimodal GenAI Compliance System</h3>
-                <div class="project-meta">Katonic AI · Largest Governmental Real Estate Entity in Saudi Arabia · 2025-Present</div>
-                <ul class="project-points">
-                    <li>Architectural design images were reviewed manually against internal policy standards, slow, inconsistent, and difficult to scale across a large regulatory body.</li>
-                    <li>Built a <strong>multimodal GenAI pipeline</strong> where users upload design images and vision agents automatically check them against policy rules. Output is a structured compliance report across three categories: Compliant, Non-Compliant with detailed reasoning, and Needs Review.</li>
-                    <li>Integrated MinerU, a non-OpenAI-compatible model, by building a <strong>custom FastAPI wrapper</strong> and deploying it on the Katonic platform. Full agent architecture built using Groq and custom-deployed models.</li>
-                    <li>End-to-end ownership across architecture, development, customer stakeholder management, and internal product alignment.</li>
-                </ul>
-                <div class="tech-stack">
-                    <span class="tech">Multimodal AI</span>
-                    <span class="tech">Vision Agents</span>
-                    <span class="tech">FastAPI</span>
-                    <span class="tech">Groq</span>
-                    <span class="tech">Custom Model Deployment</span>
-                    <span class="tech">Katonic Platform</span>
+            <div class="terminal">
+                <div class="term-titlebar">
+                    <div class="term-dot r"></div>
+                    <div class="term-dot y"></div>
+                    <div class="term-dot g"></div>
+                    <span class="term-title" id="term-title">~/projects</span>
                 </div>
-            </div>
 
-            <div class="project">
-                <h3>GenAI-Enabled QA Automation Engine</h3>
-                <div class="project-meta">Incedo Inc. · US Wealth Management Firm · 2024 · <a href="https://www.incedoinc.com/case-studies/gen-ai-enabled-qa-testing-solution-for-a-leading-us-wealth-management-firm/" target="_blank" class="proof-link">View Case Study</a></div>
-                <ul class="project-points">
-                    <li>A 60-member QA team spent significant time and cost on testing despite heavy automation investment. The end-to-end QA lifecycle was still largely manual.</li>
-                    <li>Built a <strong>GenAI engine that automated the full QA lifecycle</strong>, from user story to test case generation, and from test cases to executable test scripts. Removed the most repetitive steps from the process entirely.</li>
-                    <li><strong>33% productivity gains</strong> across end-to-end QA test cycle execution, freeing the team for higher-value development work.</li>
-                </ul>
-                <div class="tech-stack">
-                    <span class="tech">LLMs</span>
-                    <span class="tech">Prompt Engineering</span>
-                    <span class="tech">Python</span>
-                    <span class="tech">RAG</span>
-                    <span class="tech">Test Automation</span>
+                <div class="term-body">
+                    <!-- ls command -->
+                    <div class="prompt">
+                        <span class="path">~/projects</span> <span class="cmd">$ ls -la</span>
+                    </div>
+
+                    <div class="ls-output">
+                        <div class="ls-row selected" onclick="openProject('evalops')">
+                            <span class="ls-perms">drwxr-xr-x</span>
+                            <span class="ls-name">evalops/</span>
+                            <span class="ls-status pypi">on pypi</span>
+                        </div>
+                        <div class="ls-row" onclick="openProject('brand')">
+                            <span class="ls-perms">drwxr-xr-x</span>
+                            <span class="ls-name">brand-llm-visibility-audit/</span>
+                            <span class="ls-status active">active</span>
+                        </div>
+                        <div class="ls-row" onclick="openProject('harness')">
+                            <span class="ls-perms">drwxr-xr-x</span>
+                            <span class="ls-name">evaluation-harness/</span>
+                            <span class="ls-status proto">prototype</span>
+                        </div>
+                        <div class="ls-row" onclick="openProject('shower')">
+                            <span class="ls-perms">drwxr-xr-x</span>
+                            <span class="ls-name">shower-thoughts/</span>
+                            <span class="ls-status fun">just for fun</span>
+                        </div>
+                    </div>
+
+                    <hr class="term-hr">
+
+                    <!-- ===== evalops ===== -->
+                    <div class="project-detail active" id="detail-evalops">
+                        <div class="detail-prompt">
+                            <span class="path">~/projects/evalops</span> <span class="cmd">$ cat README.md</span>
+                            <span class="typing-cursor"></span>
+                        </div>
+
+                        <div class="readme-title">evalops</div>
+                        <p class="readme-thesis">If eval has friction, people skip it. When people skip eval, bad outputs reach users.</p>
+
+                        <div class="readme-tags">
+                            <span class="rtag pypi">on pypi</span>
+                            <span class="rtag eval">eval-driven</span>
+                            <span class="rtag oss">open source</span>
+                        </div>
+
+                        <p class="readme-body">
+                            A Python library that scores LLM output quality in one function call. Works with any model provider. Zero mandatory dependencies. Ships with CI regression gates so a prompt change can't quietly break production accuracy.
+                        </p>
+
+                        <div class="install-block"><span class="dollar">$</span> pip install evalsystem</div>
+
+                        <p class="readme-proof">
+                            <span class="metric">faithfulness</span> · <span class="metric">answer relevance</span> · <span class="metric">context precision</span> · <span class="metric">cost tracking per run</span> · <span class="metric">assert_no_regression()</span> for CI · <span class="metric">batch eval</span> · <span class="metric">async support</span>
+                        </p>
+
+                        <a href="https://github.com/AarushSharmaa/evalops" target="_blank" class="readme-gh">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                            View on GitHub
+                        </a>
+                    </div>
+
+                    <!-- ===== brand-llm-visibility-audit ===== -->
+                    <div class="project-detail" id="detail-brand">
+                        <div class="detail-prompt">
+                            <span class="path">~/projects/brand-llm-visibility-audit</span> <span class="cmd">$ cat README.md</span>
+                            <span class="typing-cursor"></span>
+                        </div>
+
+                        <div class="readme-title">brand-llm-visibility-audit</div>
+                        <p class="readme-thesis">AI models are becoming the first stop for purchase decisions. No established playbook exists for optimizing brand presence in LLM responses.</p>
+
+                        <div class="readme-tags">
+                            <span class="rtag agent">agentic</span>
+                            <span class="rtag oss">open source</span>
+                        </div>
+
+                        <p class="readme-body">
+                            When someone asks ChatGPT "best CRM?", most companies have no idea what comes back. This runs a 4-stage agentic pipeline across multiple AI models: audit current visibility, send a probe agent to dig into gaps, run cross-model diagnosis, then output a concrete GEO playbook with prioritized actions.
+                        </p>
+
+                        <p class="readme-proof">
+                            <span class="metric">4-stage pipeline</span>: audit &rarr; probe &rarr; diagnosis &rarr; playbook · <span class="metric">219 unit tests</span>, all mocked · <span class="metric">Groq, Gemini, OpenAI, Perplexity, Anthropic</span>
+                        </p>
+
+                        <a href="https://github.com/AarushSharmaa/brand-llm-visibility-audit" target="_blank" class="readme-gh">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                            View on GitHub
+                        </a>
+                    </div>
+
+                    <!-- ===== evaluation-harness ===== -->
+                    <div class="project-detail" id="detail-harness">
+                        <div class="detail-prompt">
+                            <span class="path">~/projects/evaluation-harness</span> <span class="cmd">$ cat README.md</span>
+                            <span class="typing-cursor"></span>
+                        </div>
+
+                        <div class="readme-title">evaluation-harness</div>
+                        <p class="readme-thesis">Eval before you build. Know if the problem is solvable with your current approach before spending cycles iterating.</p>
+
+                        <div class="readme-tags">
+                            <span class="rtag eval">eval-driven</span>
+                            <span class="rtag multi">multimodal</span>
+                            <span class="rtag oss">open source</span>
+                        </div>
+
+                        <p class="readme-body">
+                            A prompt evaluation harness for VLM-based extraction on freight documents. Compares three strategies (naive, structured, few-shot) against ground truth and classifies every failure: is it layout ambiguity, format variance, scan quality, or something a better prompt can actually fix? The taxonomy tells teams what to iterate on and what to stop wasting time on.
+                        </p>
+
+                        <p class="readme-proof">
+                            <span class="metric">3 prompt strategies</span> · <span class="metric">per-field scoring</span> against ground truth · failure taxonomy: <span class="metric">layout_ambiguity</span>, <span class="metric">format_variance</span>, <span class="metric">scan_quality</span>, <span class="metric">prompt_fixable</span>
+                        </p>
+
+                        <a href="https://github.com/AarushSharmaa/evaluation-harness" target="_blank" class="readme-gh">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                            View on GitHub
+                        </a>
+                    </div>
+
+                    <!-- ===== shower-thoughts ===== -->
+                    <div class="project-detail" id="detail-shower">
+                        <div class="detail-prompt">
+                            <span class="path">~/projects/shower-thoughts</span> <span class="cmd">$ cat README.md</span>
+                            <span class="typing-cursor"></span>
+                        </div>
+
+                        <div class="readme-title">shower-thoughts</div>
+                        <p class="readme-thesis">You learn agent patterns better when the stakes are low and the feedback loop is fast.</p>
+
+                        <div class="readme-tags">
+                            <span class="rtag fun">just for fun</span>
+                            <span class="rtag agent">multi-agent</span>
+                            <span class="rtag oss">open source</span>
+                        </div>
+
+                        <p class="readme-body">
+                            Type a shower thought. Four AI agents debate it: an Optimist argues why you're brilliant, a Cynic finds the fatal flaw, a Researcher searches the web for prior art, and a Judge delivers the verdict. Built to explore multi-agent orchestration, role-based personas, and tool use in a context where experimentation is the point.
+                        </p>
+
+                        <p class="readme-proof">
+                            <span class="metric">CrewAI</span> · <span class="metric">LiteLLM</span> · <span class="metric">DuckDuckGo search</span> · <span class="metric">Streamlit</span> · <span class="metric">BYOK</span> (bring your own API key)
+                        </p>
+
+                        <a href="https://github.com/AarushSharmaa/shower-thoughts" target="_blank" class="readme-gh">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                            View on GitHub
+                        </a>
+                    </div>
+
+                    <p class="term-hint">click a project above to explore</p>
+
                 </div>
-            </div>
-
-            <div class="project">
-                <h3>Private LLM-Powered Customer Support Chatbot</h3>
-                <div class="project-meta">Incedo Inc. · German Hardware Networking Client · 2023-2024</div>
-                <ul class="project-points">
-                    <li>Customer support queries required searching across large volumes of technical documentation, with resolution times running into days.</li>
-                    <li>Built a <strong>conversational AI system using Advanced RAG</strong>, with open-source LLMs identified and deployed privately on AWS EC2 to meet strict data security requirements.</li>
-                    <li><strong>Query resolution time reduced from days to minutes. Response accuracy exceeded 95% in production.</strong></li>
-                    <li>Also contributed NLP pipelines for named-entity extraction, Flask REST APIs for full-stack integration, and database design across the solution.</li>
-                </ul>
-                <div class="tech-stack">
-                    <span class="tech">RAG</span>
-                    <span class="tech">Private LLM</span>
-                    <span class="tech">AWS EC2</span>
-                    <span class="tech">Flask</span>
-                    <span class="tech">NLP</span>
-                    <span class="tech">Named Entity Extraction</span>
-                </div>
-            </div>
-
-            <div class="project">
-                <h3>Text-to-SQL for Leadership Analytics</h3>
-                <div class="project-meta">Curve AI · Leading Indian Watch Manufacturer · 2025</div>
-                <ul class="project-points">
-                    <li>Leadership depended on analysts to pull reports from complex databases, creating delays and a constant bottleneck on the data team.</li>
-                    <li>Built a <strong>Text-to-SQL system</strong> using a RAG pipeline where users ask in natural language and get SQL-backed results with automated dashboard output. A Schema Intelligence Agent maps natural language intent to the right tables, columns, and relationships. A Dashboard Generator Agent then converts query results into visual reports for leadership.</li>
-                    <li>Reduced dashboard access time and <strong>removed analyst dependency for routine reporting.</strong></li>
-                </ul>
-                <div class="tech-stack">
-                    <span class="tech">Text-to-SQL</span>
-                    <span class="tech">RAG</span>
-                    <span class="tech">LLMs</span>
-                    <span class="tech">Schema Intelligence Agent</span>
-                    <span class="tech">SQL</span>
-                    <span class="tech">Dashboard Generation</span>
-                </div>
-            </div>
-        </section>
-
-        <section class="section">
-            <h2>Products &amp; POCs</h2>
-            <p class="section-intro">A wide variety of POCs across clients and domains. Validating ideas quickly, learning what works, and occasionally taking things to production.</p>
-
-            <div class="project">
-                <h3>AI-Driven Mental Health Platform</h3>
-                <div class="project-meta">Curve AI · 2025 · Used across schools in North India and a major hospital in Gurugram · <a href="https://www.bharatayush.ai/" target="_blank" class="proof-link">Visit Product</a></div>
-                <ul class="project-points">
-                    <li>Access to structured, consistent mental health support is limited, especially in schools and clinical settings where professional bandwidth is a real constraint.</li>
-                    <li>Built a <strong>CBT-based platform</strong> providing AI-driven therapy conversations and patient assessments. Deployed and used across schools in North India and piloted at a major hospital in Gurugram.</li>
-                    <li>Led product and UI development using React JS, working directly with <strong>clinical practitioners</strong> to align the experience with therapeutic frameworks.</li>
-                </ul>
-                <div class="tech-stack">
-                    <span class="tech">React</span>
-                    <span class="tech">Node.js</span>
-                    <span class="tech">OpenAI API</span>
-                    <span class="tech">CBT Framework</span>
-                </div>
-            </div>
-
-            <div class="project">
-                <h3>D2C E-Commerce Intelligence Platform</h3>
-                <div class="project-meta">Curve AI · 2025</div>
-                <ul class="project-points">
-                    <li>D2C brands had no reliable way to track competitor pricing and market trends at scale without heavy manual effort.</li>
-                    <li>Built a scalable backend for price tracking, historical analysis, and trend prediction across multiple e-commerce platforms.</li>
-                    <li>Core component is a <strong>multi-agent web scraper</strong> for large-scale data collection, handling dynamic content, rate limiting, and data validation automatically. <strong>Reduced data processing time by over 60%.</strong></li>
-                </ul>
-                <div class="tech-stack">
-                    <span class="tech">Python</span>
-                    <span class="tech">Multi-Agent Systems</span>
-                    <span class="tech">FastAPI</span>
-                    <span class="tech">PostgreSQL</span>
-                    <span class="tech">Web Scraping</span>
-                </div>
-            </div>
-
-            <div class="project">
-                <h3>POC Lab</h3>
-                <div class="project-meta">Ongoing · Various Clients and Domains</div>
-                <p class="poc-intro">A selection from a wider body of experimentation spanning telecom, enterprise software modernization, and multi-agent AI systems.</p>
-                <ul class="project-points">
-                    <li><strong>Log Lifecycle Automation (Telecom).</strong> Automated the full lifecycle of log management for customer support engineers at a major telecom client. Goal was to reduce resolution time from days to under 2 hours by intelligently triaging and routing log events.</li>
-                    <li><strong>Java to Microservices Migration (CrewAI).</strong> Agentic solution that analyzes legacy Java monolith codebases and generates microservice architecture recommendations, reducing manual effort in large-scale modernization work.</li>
-                    <li><strong>Multi-Agent E-Commerce Scraper.</strong> Adaptive scraping framework with domain-specific agents capable of handling a wide variety of site structures reliably at scale.</li>
-                    <li><strong>RAG Pipelines with Multi-Agent Orchestration.</strong> Multiple RAG implementations across domains, with orchestration layers managing retrieval, reranking, and response synthesis across specialized agents.</li>
-                </ul>
             </div>
         </section>
 
@@ -175,8 +486,38 @@
                 </a>
             </div>
         </footer>
+
     </div>
+
     <script>
+        var projectNames = {
+            evalops: 'evalops',
+            brand: 'brand-llm-visibility-audit',
+            harness: 'evaluation-harness',
+            shower: 'shower-thoughts'
+        };
+
+        function openProject(id) {
+            // Update ls row selection
+            document.querySelectorAll('.ls-row').forEach(function(r) {
+                r.classList.remove('selected');
+            });
+            event.currentTarget.classList.add('selected');
+
+            // Update title bar
+            document.getElementById('term-title').textContent = '~/projects/' + projectNames[id];
+
+            // Show project detail
+            document.querySelectorAll('.project-detail').forEach(function(d) {
+                d.classList.remove('active');
+            });
+            document.getElementById('detail-' + id).classList.add('active');
+
+            // Hide hint
+            var hint = document.querySelector('.term-hint');
+            if (hint) hint.style.display = 'none';
+        }
+
         function copyEmail(e) {
             e.preventDefault();
             navigator.clipboard.writeText('aarush.sharma6@gmail.com').then(function() {
