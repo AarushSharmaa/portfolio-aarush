@@ -1,185 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lab - Aarush Sharma</title>
-    <link rel="stylesheet" href="styles.css">
-    <meta name="description" content="Side projects by Aarush Sharma - open source tools, eval frameworks, and experiments built in public.">
-    <meta property="og:title" content="Lab - Aarush Sharma">
-    <meta property="og:description" content="Side projects born from real frustrations. Eval-driven from the start, real GitHub repos.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://aarushsharmaa.github.io/aarush-sharma/projects.html">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Lab - Aarush Sharma">
-    <meta name="twitter:description" content="Side projects born from real frustrations. Eval-driven from the start, real GitHub repos.">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lab - Aarush Sharma</title>
+  <link rel="stylesheet" href="styles.css">
+  <meta name="description" content="Side projects by Aarush Sharma. Open-source tools, eval frameworks, and experiments built in public.">
+  <meta property="og:title" content="Lab - Aarush Sharma">
+  <meta property="og:description" content="Side projects born from real frustrations. Eval-driven from the start, real GitHub repos.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aarushsharmaa.github.io/aarush-sharma/projects.html">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Lab - Aarush Sharma">
+  <meta name="twitter:description" content="Side projects born from real frustrations. Eval-driven from the start, real GitHub repos.">
 </head>
 <body>
-    <div class="container">
 
-        <nav class="nav">
-            <a href="index.html" class="nav-brand">Aarush Sharma</a>
-            <ul>
-                <li><a href="index.html">About</a></li>
-                <li><a href="work.html">Work</a></li>
-                <li><a href="projects.html" class="active">Lab</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+<div class="container">
 
-        <section class="section">
-            <h2>Built in the Open</h2>
-            <p class="open-intro">Side projects born from real frustrations. I follow eval-driven development - nothing ships until I can measure it works.</p>
+  <nav class="nav">
+    <a href="index.html" class="nav-brand">Aarush Sharma</a>
+    <ul>
+      <li><a href="index.html" class="nav-link">About</a></li>
+      <li><a href="work.html" class="nav-link">Work</a></li>
+      <li><a href="projects.html" class="nav-link active">Lab</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
+  </nav>
 
-            <!-- evalops -->
-            <div class="proj-card">
-                <div class="proj-card-header open" onclick="toggle(this)">
-                    <div class="proj-card-left">
-                        <span class="proj-name">evalops</span>
-                        <span class="proj-badge pypi">on pypi</span>
-                    </div>
-                    <span class="proj-toggle">+</span>
-                </div>
-                <div class="proj-card-body open">
-                    <p class="proj-thesis">If eval has friction, people skip it. When people skip eval, bad outputs reach users.</p>
-                    <p class="proj-body">
-                        A Python library that scores LLM output quality in one function call. Works with any model provider. Zero mandatory dependencies. Ships with CI regression gates so a prompt change can't quietly break production accuracy.
-                    </p>
-                    <div class="proj-install">pip install evalsystem</div>
-                    <div class="proj-tags">
-                        <span class="ptag">eval-driven</span>
-                        <span class="ptag">open source</span>
-                        <span class="ptag">python</span>
-                        <span class="ptag">CI</span>
-                    </div>
-                    <a href="https://github.com/AarushSharmaa/evalops" target="_blank" class="proj-gh">
-                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
-                        View on GitHub
-                    </a>
-                </div>
-            </div>
+  <header class="page-header">
+    <div class="eyebrow">Built in the Open</div>
+    <h1>Lab<span class="dot">.</span></h1>
+    <p>Side projects born from real frustrations. Eval-driven from the start. Nothing ships until I can measure that it works. Some are tools I use, some are bets on what's coming, some are just for fun. All are public.</p>
+  </header>
 
-            <!-- brand-llm-visibility-audit -->
-            <div class="proj-card">
-                <div class="proj-card-header" onclick="toggle(this)">
-                    <div class="proj-card-left">
-                        <span class="proj-name">brand-llm-visibility-audit</span>
-                        <span class="proj-badge active">active</span>
-                    </div>
-                    <span class="proj-toggle">+</span>
-                </div>
-                <div class="proj-card-body">
-                    <p class="proj-thesis">AI models are becoming the first stop for purchase decisions. No established playbook exists for optimizing brand presence in LLM responses.</p>
-                    <p class="proj-body">
-                        When someone asks ChatGPT "best CRM?", most companies have no idea what comes back. This runs a <strong>4-stage agentic pipeline</strong> across multiple AI models: audit current visibility, send a probe agent to dig into gaps, run cross-model diagnosis, then output a concrete GEO playbook with prioritized actions.
-                    </p>
-                    <div class="proj-tags">
-                        <span class="ptag">agentic</span>
-                        <span class="ptag">open source</span>
-                        <span class="ptag">219 unit tests</span>
-                        <span class="ptag">multi-model</span>
-                    </div>
-                    <a href="https://github.com/AarushSharmaa/brand-llm-visibility-audit" target="_blank" class="proj-gh">
-                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
-                        View on GitHub
-                    </a>
-                </div>
-            </div>
+  <section class="section">
 
-            <!-- evaluation-harness -->
-            <div class="proj-card">
-                <div class="proj-card-header" onclick="toggle(this)">
-                    <div class="proj-card-left">
-                        <span class="proj-name">evaluation-harness</span>
-                        <span class="proj-badge proto">prototype</span>
-                    </div>
-                    <span class="proj-toggle">+</span>
-                </div>
-                <div class="proj-card-body">
-                    <p class="proj-thesis">Eval before you build. Know if the problem is solvable with your current approach before spending cycles iterating.</p>
-                    <p class="proj-body">
-                        A prompt evaluation harness for VLM-based extraction on freight documents. Compares three strategies - naive, structured, few-shot - against ground truth and classifies every failure: is it layout ambiguity, format variance, scan quality, or something a better prompt can actually fix? The taxonomy tells teams what to iterate on and what to stop wasting time on.
-                    </p>
-                    <div class="proj-tags">
-                        <span class="ptag">eval-driven</span>
-                        <span class="ptag">multimodal</span>
-                        <span class="ptag">open source</span>
-                        <span class="ptag">3 prompt strategies</span>
-                    </div>
-                    <a href="https://github.com/AarushSharmaa/evaluation-harness" target="_blank" class="proj-gh">
-                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
-                        View on GitHub
-                    </a>
-                </div>
-            </div>
+    <details class="proj-card" open>
+      <summary>
+        <div class="proj-card-left">
+          <span class="proj-name">evalops</span>
+          <span class="proj-badge pypi">on pypi</span>
+        </div>
+        <span class="proj-toggle">+</span>
+      </summary>
+      <div class="proj-card-body">
+        <p class="proj-thesis">If eval has friction, people skip it. When people skip eval, bad outputs reach users.</p>
+        <p class="proj-body">A Python library that scores LLM output quality in one function call. Works with any model provider. Zero mandatory dependencies. Ships with CI regression gates so a prompt change can't quietly break production accuracy.</p>
+        <div class="proj-install">pip install evalsystem</div>
+        <div class="proj-tags">
+          <span class="ptag">eval-driven</span>
+          <span class="ptag">open source</span>
+          <span class="ptag">python</span>
+          <span class="ptag">CI</span>
+        </div>
+        <a href="https://github.com/AarushSharmaa/evalops" target="_blank" rel="noopener" class="proj-gh">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
+          View on GitHub →
+        </a>
+      </div>
+    </details>
 
-            <!-- shower-thoughts -->
-            <div class="proj-card">
-                <div class="proj-card-header" onclick="toggle(this)">
-                    <div class="proj-card-left">
-                        <span class="proj-name">shower-thoughts</span>
-                        <span class="proj-badge fun">just for fun</span>
-                    </div>
-                    <span class="proj-toggle">+</span>
-                </div>
-                <div class="proj-card-body">
-                    <p class="proj-thesis">You learn agent patterns better when the stakes are low and the feedback loop is fast.</p>
-                    <p class="proj-body">
-                        Type a shower thought. Four AI agents debate it: an Optimist argues why you're brilliant, a Cynic finds the fatal flaw, a Researcher searches the web for prior art, and a Judge delivers the verdict. Built to explore multi-agent orchestration, role-based personas, and tool use in a context where experimentation is the point.
-                    </p>
-                    <div class="proj-tags">
-                        <span class="ptag">multi-agent</span>
-                        <span class="ptag">crewai</span>
-                        <span class="ptag">streamlit</span>
-                        <span class="ptag">open source</span>
-                    </div>
-                    <a href="https://github.com/AarushSharmaa/shower-thoughts" target="_blank" class="proj-gh">
-                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
-                        View on GitHub
-                    </a>
-                </div>
-            </div>
+    <details class="proj-card">
+      <summary>
+        <div class="proj-card-left">
+          <span class="proj-name">brand-llm-visibility-audit</span>
+          <span class="proj-badge active">active</span>
+        </div>
+        <span class="proj-toggle">+</span>
+      </summary>
+      <div class="proj-card-body">
+        <p class="proj-thesis">AI models are becoming the first stop for purchase decisions. No established playbook exists for optimizing brand presence in LLM responses.</p>
+        <p class="proj-body">When someone asks ChatGPT "best CRM?", most companies have no idea what comes back. This runs a <strong>4-stage agentic pipeline</strong> across multiple AI models: audit current visibility, send a probe agent to dig into gaps, run cross-model diagnosis, then output a concrete GEO playbook with prioritized actions.</p>
+        <div class="proj-tags">
+          <span class="ptag">agentic</span>
+          <span class="ptag">open source</span>
+          <span class="ptag">219 unit tests</span>
+          <span class="ptag">multi-model</span>
+        </div>
+        <a href="https://github.com/AarushSharmaa/brand-llm-visibility-audit" target="_blank" rel="noopener" class="proj-gh">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
+          View on GitHub →
+        </a>
+      </div>
+    </details>
 
-        </section>
+    <details class="proj-card">
+      <summary>
+        <div class="proj-card-left">
+          <span class="proj-name">evaluation-harness</span>
+          <span class="proj-badge proto">prototype</span>
+        </div>
+        <span class="proj-toggle">+</span>
+      </summary>
+      <div class="proj-card-body">
+        <p class="proj-thesis">Eval before you build. Know if the problem is solvable with your current approach before spending cycles iterating.</p>
+        <p class="proj-body">A prompt evaluation harness for VLM-based extraction on freight documents. Compares three strategies (naive, structured, few-shot) against ground truth and classifies every failure: is it layout ambiguity, format variance, scan quality, or something a better prompt can actually fix? The taxonomy tells teams what to iterate on and what to stop wasting time on.</p>
+        <div class="proj-tags">
+          <span class="ptag">eval-driven</span>
+          <span class="ptag">multimodal</span>
+          <span class="ptag">open source</span>
+          <span class="ptag">3 prompt strategies</span>
+        </div>
+        <a href="https://github.com/AarushSharmaa/evaluation-harness" target="_blank" rel="noopener" class="proj-gh">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
+          View on GitHub →
+        </a>
+      </div>
+    </details>
 
-        <section class="contact" id="contact">
-            <h2>Let's build something.</h2>
-            <p class="contact-sub">Open to interesting problems in AI engineering, enterprise GenAI,<br>and anything that actually needs to ship.</p>
-            <div class="contact-links">
-                <a href="mailto:aarush.sharma6@gmail.com" class="clink" id="email-link" onclick="copyEmail(event)">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-                    aarush.sharma6@gmail.com
-                </a>
-                <a href="https://linkedin.com/in/aarushsharma11" target="_blank" class="clink">
-                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-                    LinkedIn
-                </a>
-                <a href="https://github.com/AarushSharmaa" target="_blank" class="clink">
-                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
-                    GitHub
-                </a>
-            </div>
-        </section>
+    <details class="proj-card">
+      <summary>
+        <div class="proj-card-left">
+          <span class="proj-name">shower-thoughts</span>
+          <span class="proj-badge fun">just for fun</span>
+        </div>
+        <span class="proj-toggle">+</span>
+      </summary>
+      <div class="proj-card-body">
+        <p class="proj-thesis">You learn agent patterns better when the stakes are low and the feedback loop is fast.</p>
+        <p class="proj-body">Type a shower thought. Four AI agents debate it: an Optimist argues why you're brilliant, a Cynic finds the fatal flaw, a Researcher searches the web for prior art, and a Judge delivers the verdict. Built to explore multi-agent orchestration, role-based personas, and tool use in a context where experimentation is the point.</p>
+        <div class="proj-tags">
+          <span class="ptag">multi-agent</span>
+          <span class="ptag">crewai</span>
+          <span class="ptag">streamlit</span>
+          <span class="ptag">open source</span>
+        </div>
+        <a href="https://github.com/AarushSharmaa/shower-thoughts" target="_blank" rel="noopener" class="proj-gh">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
+          View on GitHub →
+        </a>
+      </div>
+    </details>
 
-        <footer class="footer">aarush sharma · 2026</footer>
+  </section>
 
-    </div>
-    <script>
-        function toggle(header) {
-            var body = header.nextElementSibling;
-            header.classList.toggle('open');
-            body.classList.toggle('open');
-        }
+  <div class="outro" id="contact">
+    <a href="work.html" class="lab-row">
+      <div class="lab-row-text">
+        <h3>Shipped at Work</h3>
+        <p>Enterprise GenAI delivered for real clients. Production systems, customer rooms, the whole thing.</p>
+      </div>
+      <span class="lab-row-cta">See Work <span class="arrow">→</span></span>
+    </a>
 
-        function copyEmail(e) {
-            e.preventDefault();
-            navigator.clipboard.writeText('aarush.sharma6@gmail.com').then(function() {
-                var l = document.getElementById('email-link');
-                var orig = l.innerHTML;
-                l.innerHTML = l.innerHTML.replace('aarush.sharma6@gmail.com', 'Copied!');
-                setTimeout(function() { l.innerHTML = orig; }, 2000);
-            });
-        }
-    </script>
+    <section class="contact">
+      <h2>Let's build<br>something<span class="dot">.</span></h2>
+      <p class="contact-sub">Open to interesting problems in AI engineering, enterprise GenAI, and anything that actually needs to ship.</p>
+      <div class="contact-links">
+        <a href="mailto:aarush.sharma6@gmail.com" class="clink">
+          <div class="clink-row">
+            <span class="clink-label">Email</span>
+            <span class="clink-arrow">↗</span>
+          </div>
+          <span class="clink-value">aarush.sharma6@gmail.com</span>
+        </a>
+        <a href="https://linkedin.com/in/aarushsharma11" target="_blank" rel="noopener" class="clink">
+          <div class="clink-row">
+            <span class="clink-label">LinkedIn</span>
+            <span class="clink-arrow">↗</span>
+          </div>
+          <span class="clink-value">in/aarushsharma11</span>
+        </a>
+        <a href="https://github.com/AarushSharmaa" target="_blank" rel="noopener" class="clink">
+          <div class="clink-row">
+            <span class="clink-label">GitHub</span>
+            <span class="clink-arrow">↗</span>
+          </div>
+          <span class="clink-value">@AarushSharmaa</span>
+        </a>
+      </div>
+    </section>
+  </div>
+
+  <footer class="footer">
+    <span>aarush sharma</span>
+    <span>2026</span>
+  </footer>
+
+</div>
+
 </body>
 </html>

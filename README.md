@@ -9,10 +9,10 @@ Live at **[aarushsharmaa.github.io/aarush-sharma](https://aarushsharmaa.github.i
 ## what's inside
 
 ```
-index.html      — about me, experience, the usual
-work.html       — professional projects (enterprise GenAI, real clients)
-projects.html   — lab work (open source, experiments, things I built because I could)
-styles.css      — one stylesheet. no frameworks. no build step. just css.
+index.html      - about me, experience, the usual
+work.html       - professional projects (enterprise GenAI, real clients)
+projects.html   - lab work (open source, experiments, things I built because I could)
+styles.css      - one stylesheet. no frameworks. no build step. just css.
 ```
 
 No Node. No bundler. No `npm install`. Open `index.html` in a browser and it works. Tokens are unlimited but my patience for tooling is not.
@@ -21,7 +21,7 @@ No Node. No bundler. No `npm install`. Open `index.html` in a browser and it wor
 
 ## the stack
 
-Pure HTML, CSS, and a few lines of vanilla JS. Deployed via GitHub Pages - every push to `main` goes live.
+Pure HTML and CSS. Nothing else. Deployed via GitHub Pages, every push to `main` goes live.
 
 A portfolio doesn't need React. I said what I said.
 
